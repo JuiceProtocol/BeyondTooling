@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace BeyondUndo.BeyondTooling
 {
-	public class SearchableEnumWindow : EditorWindow
+	internal sealed class SearchableEnumWindow : EditorWindow
 	{
 		private const float ButtonHeight = 20f;
 		private const float SearchBarHeight = 22f;
@@ -62,7 +62,8 @@ namespace BeyondUndo.BeyondTooling
 
 			Rect mainWindow = EditorGUIUtility.GetMainWindowPosition();
 			Rect rect = position;
-			rect.height = Mathf.Min( _visibleEnumsCount * ButtonHeight + SearchBarHeight, mainWindow.height - position.y );
+			float remainingWindowHeight = mainWindow.height - ( position.y - mainWindow.position.y );
+			rect.height = Mathf.Min( _visibleEnumsCount * ButtonHeight + SearchBarHeight, remainingWindowHeight );
 			position = rect;
 
 			GUILayout.EndScrollView();
@@ -100,8 +101,8 @@ namespace BeyondUndo.BeyondTooling
 		private void HandleNavigation()
 		{
 			Event e = Event.current;
-			
-			if (e.type == EventType.KeyUp && e.keyCode == KeyCode.Escape)
+
+			if( e.type == EventType.KeyUp && e.keyCode == KeyCode.Escape )
 			{
 				Close();
 				e.Use();

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace BeyondUndo.BeyondTooling
 {
 	[CustomPropertyDrawer( typeof( SearchableEnumAttribute ) )]
-	public class SearchableEnumDrawer : PropertyDrawer
+	internal sealed class SearchableEnumDrawer : PropertyDrawer
 	{
 		private const string DropDownControlName = "DropDownControl";
 
@@ -18,7 +18,7 @@ namespace BeyondUndo.BeyondTooling
 
 			EditorGUI.BeginProperty( position, label, property );
 			position = EditorGUI.PrefixLabel( position, label );
-			
+
 			GUIContent guiContent = new( property.enumDisplayNames[property.enumValueIndex] );
 			GUI.SetNextControlName( DropDownControlName );
 			bool dropdownButton = EditorGUI.DropdownButton( position, guiContent, FocusType.Keyboard );
