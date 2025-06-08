@@ -1,0 +1,14 @@
+{
+    "name": "com.beyondundo.beyondtooling",
+    "version": "1.0.0",
+    "displayName": "Beyond Tooling",
+    "description": "Some useful editor tools",
+    "unity": "2019.1",
+    "unityRelease": "0b5",
+    "dependencies": {},
+   "keywords": [],
+    "author": {
+      "name": "David Panagiotopulos",
+      "email": "panagiotopulos.d@gmail.com"
+    }
+  }
