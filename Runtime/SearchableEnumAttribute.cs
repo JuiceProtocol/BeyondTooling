@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BeyondUndo.BeyondTooling
+namespace JuiceProtocol.BeyondTooling
 {
 	public class SearchableEnumAttribute : PropertyAttribute { }
 }

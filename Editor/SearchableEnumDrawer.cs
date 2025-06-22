@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace BeyondUndo.BeyondTooling
+namespace JuiceProtocol.BeyondTooling
 {
 	[CustomPropertyDrawer( typeof( SearchableEnumAttribute ) )]
 	internal sealed class SearchableEnumDrawer : PropertyDrawer
