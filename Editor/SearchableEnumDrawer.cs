@@ -12,7 +12,7 @@ namespace JuiceProtocol.BeyondTooling
 		{
 			if( property.propertyType != SerializedPropertyType.Enum )
 			{
-				EditorGUI.LabelField( position, label.text, "Use SearchableEnum with enums only." );
+				EditorGUILayout.PropertyField( property, label );
 				return;
 			}
 
